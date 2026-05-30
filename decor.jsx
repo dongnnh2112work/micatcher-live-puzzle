@@ -186,11 +186,12 @@ const CaveScene = ({ bgVariant = "main", intensity = 1 }) => {
 };
 
 // Header with logo + slogan
-const KioskHeader = ({ compact = false, lang = "en" }) => {
+const KioskHeader = ({ compact = false, hero = false, flow = false, lang = "en" }) => {
   const sloganEn = "CATCH THE MIC — CATCH THE MOMENT";
   const sloganVi = "BẮT TRỌN MIC — BẮT TRỌN KHOẢNH KHẮC";
+  const cls = ["kiosk-header", compact && "compact", hero && "hero", flow && "flow"].filter(Boolean).join(" ");
   return (
-    <div className={`kiosk-header ${compact ? "compact" : ""}`}>
+    <div className={cls}>
       <img src={getAsset("logo")} alt="Micatcher 2026" className="logo" />
       <div className="slogan">{lang === "vi" ? sloganVi : sloganEn}</div>
     </div>

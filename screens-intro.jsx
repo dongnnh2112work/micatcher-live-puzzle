@@ -120,18 +120,17 @@ const ScreenMenu = ({ onPickSolo, onPickDuo, onTutorial, lang = "en" }) => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        gap: 40,
-        padding: "180px 80px 80px",
+        gap: 28,
+        padding: "80px",
       }}
     >
-      <KioskHeader lang={lang} />
+      <KioskHeader lang={lang} hero flow />
 
       {/* Tagline above cards */}
       <div
         style={{
           textAlign: "center",
-          marginTop: 30,
-          marginBottom: 10,
+          marginBottom: 4,
           animation: "scale-in 0.6s ease 0.1s both",
         }}
       >

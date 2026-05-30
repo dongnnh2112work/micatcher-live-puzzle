@@ -287,9 +287,6 @@ function App() {
         </div>
       </div>
 
-      {/* Screen selector dock — visible only in mockup */}
-      <ScreenDock current={screen} onPick={goto} lang={lang} />
-
       <TweaksPanel>
         <TweakSection label="Screen" />
         <TweakSelect
@@ -345,65 +342,5 @@ function App() {
     </>
   );
 }
-
-// Bottom-of-screen dock to jump between screens — visible only when not in fullscreen
-const ScreenDock = ({ current, onPick, lang = "en" }) => {
-  const labels = {
-    "menu": "Menu",
-    "tutorial": "Tutorial",
-    "loading": "Loading",
-    "scan-solo": "Solo · Scan",
-    "countdown-solo": "Solo · 3·2·1",
-    "play-solo": "Solo · Play",
-    "solved-solo": "Solo · Won",
-    "scan-duo": "Duo · Scan",
-    "countdown-duo": "Duo · 3·2·1",
-    "play-duo": "Duo · Play",
-    "solved-duo": "Duo · Won",
-    "error": "Error",
-  };
-  return (
-    <div
-      style={{
-        position: "fixed",
-        bottom: 12,
-        left: 12,
-        right: 320,
-        zIndex: 100,
-        display: "flex",
-        flexWrap: "wrap",
-        gap: 6,
-        padding: 8,
-        background: "rgba(0,0,0,0.6)",
-        borderRadius: 12,
-        backdropFilter: "blur(12px)",
-        border: "1px solid rgba(255,255,255,0.08)",
-      }}
-    >
-      <div style={{ width: "100%", fontSize: 10, color: "rgba(255,255,255,0.5)", marginBottom: 2, letterSpacing: "0.12em", textTransform: "uppercase" }}>
-        Mockup screen navigator
-      </div>
-      {SCREENS.map((s) => (
-        <button
-          key={s}
-          type="button"
-          onClick={() => onPick(s)}
-          style={{
-            fontFamily: "var(--f-mono)",
-            fontSize: 11,
-            padding: "6px 10px",
-            borderRadius: 6,
-            border: `1px solid ${s === current ? "var(--cyan)" : "rgba(255,255,255,0.12)"}`,
-            background: s === current ? "rgba(61,224,255,0.15)" : "rgba(0,0,0,0.4)",
-            color: s === current ? "var(--cyan)" : "rgba(255,255,255,0.6)",
-            cursor: "pointer",
-          }}
-        >
-          {labels[s] || s}
-        </button>
-      ))}
-    </div>
-  );
-};
 
 ReactDOM.createRoot(document.getElementById("root")).render(<App />);

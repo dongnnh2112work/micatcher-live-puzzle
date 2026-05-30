@@ -173,6 +173,26 @@ input { font-family: inherit; }
   width: auto;
   filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.5));
 }
+/* Menu hero — logo 2× + lower */
+.kiosk-header.hero {
+  top: 72px;
+  gap: 8px;
+}
+.kiosk-header.hero img.logo {
+  height: 176px;
+}
+.kiosk-header.hero .slogan {
+  font-size: 16px;
+  letter-spacing: 0.28em;
+}
+/* Menu — logo trong flow, sát nội dung bên dưới */
+.kiosk-header.flow {
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+  margin-bottom: 4px;
+}
 .kiosk-header .slogan {
   font-family: var(--f-display);
   font-weight: 600;
